@@ -1,4 +1,3 @@
-# recommendations.py
 from typing import List, Dict
 from database import get_db_connection
 
