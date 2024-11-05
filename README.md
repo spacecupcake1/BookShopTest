@@ -16,3 +16,6 @@ python -m tests.run_tests --test-type db-mock --verbose
 
 ### Automation of the Testes
 python run_tests.py > output.log 2>&1
+
+### Mutation Test
+python -m unittest tests/test_mutations.py -v
