@@ -14,4 +14,5 @@ python -m tests.run_tests
 
 python -m tests.run_tests --test-type db-mock --verbose
 
-
+### Automation of the Testes
+python run_tests.py > output.log 2>&1
