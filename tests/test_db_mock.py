@@ -18,7 +18,6 @@ class TestDatabaseMock(unittest.TestCase):
 
     @patch('crud.get_db_connection')
     def test_create_book(self, mock_db_conn):
-        """Test creating a book with mock data if specified"""
         # Setup mock
         mock_db_conn.return_value.__enter__.return_value = self.db_mock
         self.cursor_mock.lastrowid = 1
@@ -38,6 +37,7 @@ class TestDatabaseMock(unittest.TestCase):
         # Assertions
         self.assertEqual(result["id"], 1)
         self.assertEqual(result["title"], "New Test Book")
+        self.assertNotEqual(result["description"], "Wrong Test Description")
         self.cursor_mock.execute.assert_called_once()
         
         if self.args.verbose:

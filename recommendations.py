@@ -2,18 +2,6 @@ from typing import List, Dict
 from database import get_db_connection
 
 def get_book_recommendations(preferences: Dict) -> List[Dict]:
-    """
-    Get book recommendations based on user preferences.
-    
-    Args:
-        preferences: Dict containing:
-            - genres: List of preferred genres
-            - authors: List of preferred authors
-            - max_results: Maximum number of recommendations to return
-    
-    Returns:
-        List of recommended books
-    """
     with get_db_connection() as conn:
         cursor = conn.cursor()
         
