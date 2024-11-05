@@ -8,7 +8,7 @@ def run_tests():
     subprocess.call('source env/bin/activate && pytest', shell=True)
 
 # Schedule the job every day at midnight
-schedule.every().day.at("00:00").do(run_tests)
+schedule.every().day.at("14:05").do(run_tests)
 
 # Keep the script running to handle the scheduled jobs
 while True:
