@@ -1,5 +1,38 @@
-......
+.......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.056s
+Ran 7 tests in 0.049s
 
 OK
+
+Mutation Testing Results:
+------------------------
+
+Mutation #1 (random)
+Original: Original Test Book
+Mutated:  OrigSinalV TvsBook
+Status: SUCCESS
+
+Mutation #2 (empty)
+Original: Original Test Book
+Mutated:  
+Status: ERROR - Book title cannot be empty
+
+Mutation #3 (very_long)
+Original: Original Test Book
+Mutated:  Original Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test BookOriginal Test Book
+Status: ERROR - Book title exceeds maximum length
+
+Mutation #4 (special_chars)
+Original: Original Test Book
+Mutated:  Original Test Book@#$%^
+Status: SUCCESS
+
+Mutation #5 (random)
+Original: Original Test Book
+Mutated:  Orgina Cest 4oo
+Status: SUCCESS
+
+Summary:
+Total mutations: 5
+Successful mutations: 3
+Failed mutations: 2

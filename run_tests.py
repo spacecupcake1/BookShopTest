@@ -1,19 +1,23 @@
-import schedule
-import time
-import subprocess
+import unittest
+import sys
+from tests.utils import BookshopTestRunner
 
-def run_tests():
-    # Activate virtual environment and run tests
-    activate_command = r'env\Scripts\activate.bat'
-    test_command = 'python -m tests.run_tests'
+def run_all_tests():
+    # Create test suite based on command line arguments
+    runner = BookshopTestRunner()
+    args = runner.parser.parse_args()
     
-    # Run both commands in sequence
-    subprocess.call(f'{activate_command} && {test_command}', shell=True)
+    # Configure test output verbosity
+    verbosity = 2 if args.verbose else 1
+    
+    # Discover and run tests
+    loader = unittest.TestLoader()
+    start_dir = '.'
+    suite = loader.discover(start_dir, pattern='test_*.py')
+    
+    # Run the tests
+    runner = unittest.TextTestRunner(verbosity=verbosity)
+    runner.run(suite)
 
-# Schedule the job every day at xx:xx
-schedule.every().day.at("14:46").do(run_tests)
-
-# Keep the script running to handle the scheduled jobs
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+if __name__ == '__main__':
+    run_all_tests()
