@@ -38,6 +38,9 @@ class TestDatabaseMock(unittest.TestCase):
         # Assertions
         self.assertEqual(result["id"], 1)
         self.assertEqual(result["title"], "New Test Book")
+        self.assertNotEqual(result["description"], "Wrong Description")
+        self.assertEqual(result["author_id"], 1)
+        self.assertLessEqual(result["genre_id"], 2)
         self.cursor_mock.execute.assert_called_once()
         
         if self.args.verbose:
