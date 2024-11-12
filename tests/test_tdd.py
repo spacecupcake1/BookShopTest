@@ -68,6 +68,25 @@ class TestTDD(unittest.TestCase):
         finally:
             temp_conn.close()
 
+    def test_data_equality_in_recommendations(self):
+        # Define preferences for the test
+        preferences = {
+            "genres": ["Fantasy"],
+            "authors": ["Test Author 1"],
+            "max_results": 5
+        }
+
+        # Define the expected data
+        expected_data = [
+            {
+                "id": 1,
+                "title": "Test Book 1",
+                "description": "Description 1",
+                "author": "Test Author 1",
+                "genre": "Fantasy"
+            }
+        ]
+
     def validate_recommendation_structure(self, recommendation):
         """Helper method to validate the structure and data types of a recommendation"""
         required_fields = {
