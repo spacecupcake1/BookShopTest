@@ -31,7 +31,7 @@ python -m tests.run_tests --test-type db-mock --verbose
 ### Automation of the Testes
 
 ```python
-python run_tests.py > output.log 2>&1
+python time_tests.py > output.log 2>&1
 ```
 
 ### Mutation Test

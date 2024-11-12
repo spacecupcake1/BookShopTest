@@ -1,15 +1,33 @@
-.......
+test_book_timestamp (test_bookshop_args.TestBookshopWithArgs.test_book_timestamp)
+Test book creation timestamp with frozen time if specified ... ok
+test_create_book (test_bookshop_args.TestBookshopWithArgs.test_create_book)
+Test creating a book with mock data if specified ... ok
+test_get_book_recommendations (test_bookshop_args.TestBookshopWithArgs.test_get_book_recommendations)
+Test book recommendations system (TDD approach) ... ok
+test_create_book (tests.test_db_mock.TestDatabaseMock.test_create_book)
+Test creating a book with mock data if specified ... ok
+test_mutated_book_creation (tests.test_mutations.TestMutationTesting.test_mutated_book_creation)
+Test creating books with mutated data to verify error handling ... ok
+test_get_book_recommendations (tests.test_tdd.TestTDD.test_get_book_recommendations)
+Test book recommendations system (TDD approach) ... ok
+test_book_timestamp (tests.test_time_freeze.TestTimeFreeze.test_book_timestamp)
+Test book creation timestamp with frozen time if specified ... ok
+
 ----------------------------------------------------------------------
-Ran 7 tests in 0.049s
+Ran 7 tests in 0.045s
 
 OK
+
+Test recommendations: [{'id': 1, 'title': 'Test Book 1', 'description': 'Description 1', 'author': 'Test Author 1', 'genre': 'Fantasy'}]
+
+Test create_book result: {'id': 1, 'title': 'New Test Book', 'description': 'Test Description', 'author_id': 1, 'genre_id': 1}
 
 Mutation Testing Results:
 ------------------------
 
 Mutation #1 (random)
 Original: Original Test Book
-Mutated:  OrigSinalV TvsBook
+Mutated:  OOioginal ET4t Book
 Status: SUCCESS
 
 Mutation #2 (empty)
@@ -29,10 +47,12 @@ Status: SUCCESS
 
 Mutation #5 (random)
 Original: Original Test Book
-Mutated:  Orgina Cest 4oo
+Mutated:  OiginalTest Bo7ok
 Status: SUCCESS
 
 Summary:
 Total mutations: 5
 Successful mutations: 3
 Failed mutations: 2
+
+Test recommendations: [{'id': 1, 'title': 'Test Book 1', 'description': 'Description 1', 'author': 'Test Author 1', 'genre': 'Fantasy'}]

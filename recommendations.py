@@ -12,11 +12,31 @@ def get_book_recommendations(preferences: Dict) -> List[Dict]:
             - max_results: Maximum number of recommendations to return
     
     Returns:
-        List of recommended books
+        List of recommended books. Returns empty list if no preferences are provided.
     """
+    # Return empty list if no preferences are provided
+    if not preferences['genres'] and not preferences['authors']:
+        return []
+        
     with get_db_connection() as conn:
         cursor = conn.cursor()
         
+        # Build the query based on available preferences
+        conditions = []
+        params = []
+        
+        if preferences['genres']:
+            conditions.append(f"g.name IN ({','.join(['?'] * len(preferences['genres']))})")
+            params.extend(preferences['genres'])
+            
+        if preferences['authors']:
+            conditions.append(f"a.name IN ({','.join(['?'] * len(preferences['authors']))})")
+            params.extend(preferences['authors'])
+            
+        # If no conditions (shouldn't happen due to earlier check), return empty list
+        if not conditions:
+            return []
+            
         query = """
         SELECT DISTINCT 
             b.id,
@@ -27,14 +47,11 @@ def get_book_recommendations(preferences: Dict) -> List[Dict]:
         FROM books b
         JOIN authors a ON b.author_id = a.id
         JOIN genres g ON b.genre_id = g.id
-        WHERE g.name IN ({}) OR a.name IN ({})
+        WHERE {}
         LIMIT ?
-        """.format(
-            ','.join(['?'] * len(preferences['genres'])),
-            ','.join(['?'] * len(preferences['authors']))
-        )
+        """.format(" OR ".join(conditions))
         
-        params = [*preferences['genres'], *preferences['authors'], preferences['max_results']]
+        params.append(preferences['max_results'])
         cursor.execute(query, params)
         
         recommendations = []
