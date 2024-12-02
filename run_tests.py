@@ -1,23 +1,26 @@
 import unittest
-import sys
-from tests.utils import BookshopTestRunner
+import multiprocessing
+from unittest.runner import TextTestRunner
+from unittest.loader import TestLoader
 
-def run_all_tests():
-    # Create test suite based on command line arguments
-    runner = BookshopTestRunner()
-    args = runner.parser.parse_args()
-    
-    # Configure test output verbosity
-    verbosity = 2 if args.verbose else 1
-    
-    # Discover and run tests
-    loader = unittest.TestLoader()
-    start_dir = '.'
-    suite = loader.discover(start_dir, pattern='test_*.py')
-    
-    # Run the tests
-    runner = unittest.TextTestRunner(verbosity=verbosity)
+def run_test_suite(test_file):
+    loader = TestLoader()
+    suite = loader.discover(start_dir='.', pattern=test_file)
+    runner = TextTestRunner(verbosity=2)
     runner.run(suite)
 
 if __name__ == '__main__':
-    run_all_tests()
+    test_files = [
+        'test_db_connections.py',
+        'test_transactions.py',
+        'test_data_validation.py'
+    ]
+    
+    processes = []
+    for test_file in test_files:
+        process = multiprocessing.Process(target=run_test_suite, args=(test_file,))
+        processes.append(process)
+        process.start()
+    
+    for process in processes:
+        process.join()

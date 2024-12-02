@@ -11,7 +11,7 @@ def run_tests():
     subprocess.call(f'{activate_command} && {test_command}', shell=True)
 
 # Schedule the job every day at xx:xx
-schedule.every().day.at("13:55").do(run_tests)
+schedule.every().day.at("13:5").do(run_tests)
 
 # Keep the script running to handle the scheduled jobs
 while True:

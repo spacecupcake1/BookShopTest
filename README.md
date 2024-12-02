@@ -3,39 +3,31 @@
 ### Run Test 1
 
 ```python
-python -m unittest tests.test_db_mock
+python -m unittest test_db_connections.py
 ```
 
 ### Run Test 2
 
 ```python
-python -m unittest tests.test_time_freeze
+python -m unittest test_transactions.py 
 ```
 
 ### Run Test 3
 
 ```python
-python -m unittest tests.test_tdd
+python -m unittest test_data_validation.py
 ```
 
 ### Run All Tests
 
 ```python
-python -m tests.run_tests
-```
+python run_tests.py
 
-```python
-python -m tests.run_tests --test-type db-mock --verbose
+python -m unittest discover -p "test_*.py"
 ```
 
 ### Automation of the Testes
 
 ```python
-python time_tests.py > output.log 2>&1
-```
-
-### Mutation Test
-
-```python
-python -m unittest tests/test_mutations.py -v
+python run_tests.py > output.log 2>&1
 ```

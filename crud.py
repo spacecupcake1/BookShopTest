@@ -1,4 +1,3 @@
-# crud.py
 from database import get_db_connection
 from models import BookCreate, AuthorCreate, GenreCreate
 

@@ -1,0 +1,158 @@
+{
+    "authors": [
+      { "id": 1, "name": "George Orwell", "books": [] },
+      { "id": 2, "name": "Jane Austen", "books": [] },
+      { "id": 3, "name": "Gabriel García Márquez", "books": [] },
+      { "id": 4, "name": "Virginia Woolf", "books": [] },
+      { "id": 5, "name": "Haruki Murakami", "books": [] }
+    ],
+    "genres": [
+      { "id": 1, "name": "Science Fiction" },
+      { "id": 2, "name": "Classic Literature" },
+      { "id": 3, "name": "Magical Realism" },
+      { "id": 4, "name": "Romance" },
+      { "id": 5, "name": "Mystery" }
+    ],
+    "books": [
+      {
+        "id": 1,
+        "title": "1984",
+        "description": "A dystopian novel set in a totalitarian society",
+        "author_id": 1,
+        "genre_id": 1
+      },
+      {
+        "id": 2,
+        "title": "Pride and Prejudice",
+        "description": "A romantic novel about the Bennet family",
+        "author_id": 2,
+        "genre_id": 2
+      },
+      {
+        "id": 3,
+        "title": "One Hundred Years of Solitude",
+        "description": "The multi-generational story of the Buendía family",
+        "author_id": 3,
+        "genre_id": 3
+      },
+      {
+        "id": 4,
+        "title": "Mrs. Dalloway",
+        "description": "A day in the life of Clarissa Dalloway",
+        "author_id": 4,
+        "genre_id": 2
+      },
+      {
+        "id": 5,
+        "title": "Norwegian Wood",
+        "description": "A nostalgic story of loss and sexuality",
+        "author_id": 5,
+        "genre_id": 2
+      },
+      {
+        "id": 6,
+        "title": "Animal Farm",
+        "description": "An allegorical novella about Soviet totalitarianism",
+        "author_id": 1,
+        "genre_id": 2
+      },
+      {
+        "id": 7,
+        "title": "Sense and Sensibility",
+        "description": "A story of two sisters with contrasting temperaments",
+        "author_id": 2,
+        "genre_id": 4
+      },
+      {
+        "id": 8,
+        "title": "Chronicle of a Death Foretold",
+        "description": "A non-linear investigation of a murder",
+        "author_id": 3,
+        "genre_id": 5
+      },
+      {
+        "id": 9,
+        "title": "To the Lighthouse",
+        "description": "A meditation on marriage, childhood, and loss",
+        "author_id": 4,
+        "genre_id": 2
+      },
+      {
+        "id": 10,
+        "title": "Kafka on the Shore",
+        "description": "A surreal tale of parallel journeys",
+        "author_id": 5,
+        "genre_id": 3
+      },
+      {
+        "id": 11,
+        "title": "Emma",
+        "description": "A novel about youthful hubris and romantic misunderstandings",
+        "author_id": 2,
+        "genre_id": 4
+      },
+      {
+        "id": 12,
+        "title": "Love in the Time of Cholera",
+        "description": "A love story spanning fifty years",
+        "author_id": 3,
+        "genre_id": 4
+      },
+      {
+        "id": 13,
+        "title": "Orlando",
+        "description": "A biography spanning centuries and genders",
+        "author_id": 4,
+        "genre_id": 1
+      },
+      {
+        "id": 14,
+        "title": "The Wind-Up Bird Chronicle",
+        "description": "A story about a search for a missing cat",
+        "author_id": 5,
+        "genre_id": 5
+      },
+      {
+        "id": 15,
+        "title": "Burmese Days",
+        "description": "A novel about British colonialism in Burma",
+        "author_id": 1,
+        "genre_id": 2
+      },
+      {
+        "id": 16,
+        "title": "Northanger Abbey",
+        "description": "A parody of Gothic fiction",
+        "author_id": 2,
+        "genre_id": 2
+      },
+      {
+        "id": 17,
+        "title": "The General in His Labyrinth",
+        "description": "A fictionalized account of Simón Bolívar's last days",
+        "author_id": 3,
+        "genre_id": 2
+      },
+      {
+        "id": 18,
+        "title": "The Waves",
+        "description": "An experimental novel following six characters",
+        "author_id": 4,
+        "genre_id": 2
+      },
+      {
+        "id": 19,
+        "title": "1Q84",
+        "description": "A story about a parallel existence",
+        "author_id": 5,
+        "genre_id": 1
+      },
+      {
+        "id": 20,
+        "title": "Coming Up for Air",
+        "description": "A middle-aged man's return to his hometown",
+        "author_id": 1,
+        "genre_id": 2
+      }
+    ]
+  }
