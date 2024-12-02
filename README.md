@@ -21,7 +21,7 @@ python -m unittest test_data_validation.py
 ### Run All Tests
 
 ```python
-python run_tests.py
+python -m unittest -v
 
 python -m unittest discover -p "test_*.py"
 ```
