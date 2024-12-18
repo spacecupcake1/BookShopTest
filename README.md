@@ -1,33 +1,7 @@
 ## Test CMD
 
-### Run Test 1
+### Run  Performance Test
 
 ```python
-python -m unittest test_db_connections.py
-```
-
-### Run Test 2
-
-```python
-python -m unittest test_transactions.py 
-```
-
-### Run Test 3
-
-```python
-python -m unittest test_data_validation.py
-```
-
-### Run All Tests
-
-```python
-python -m unittest -v
-
-python -m unittest discover -p "test_*.py"
-```
-
-### Automation of the Testes
-
-```python
-python run_tests.py > output.log 2>&1
+py test_performance.py
 ```

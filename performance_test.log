@@ -1,0 +1,6 @@
+2024-12-18 11:01:36,675 - INFO - Starting comprehensive system performance test
+2024-12-18 11:01:37,686 - INFO - Starting CPU stress test with 4 threads for 10 seconds
+2024-12-18 11:01:49,817 - INFO - CPU stress test results: {'cpu_impact': -1.2000000000000002, 'memory_impact': 0.006755549828430685, 'response_time_impact': -0.0013966560363769531}
+2024-12-18 11:01:49,818 - INFO - Starting memory stress test with 500MB
+2024-12-18 11:02:43,320 - INFO - Memory stress test results: {'peak_memory_usage': 1.6067870917550318, 'memory_not_freed': 0.0, 'system_response_impact': 0.0019960403442382812}
+2024-12-18 11:02:43,325 - INFO - Comprehensive test completed
